@@ -38,7 +38,7 @@ extension IndividualNumberReader {
         tag.sendCommand(apdu: adpu, completionHandler: completionHandler)
     }
     
-    internal func computeDigitalSignature(tag: IndividualNumberCardTag, data: [UInt8],completionHandler: @escaping IndividualNumberReaderCompletionHandler) {
+    internal func computeDigitalSignature(tag: IndividualNumberCardTag, dataToSign: [UInt8],completionHandler: @escaping IndividualNumberReaderCompletionHandler) {
         let apdu = NFCISO7816APDU(instructionClass: 0x80, instructionCode: 0x2A, p1Parameter: 0x00, p2Parameter: 0x80, data: Data(dataToSign), expectedResponseLength: 0x00)
         
         tag.sendCommand(apdu: adpu, completionHandler: completionHandler)
