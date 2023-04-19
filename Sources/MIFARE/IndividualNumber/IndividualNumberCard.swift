@@ -20,14 +20,25 @@ public enum IndividualNumberCardItem: CaseIterable {
 }
 
 public enum IndividualNumberCardApplication: CaseIterable {
-    /// 公的個人認証AP
-    case electronicApplication
+    /// 公的個人認証（JPKI）AP
+    case jpkiApplication
     /// 券面事項確認AP
     case cardInfoInputCheckApplication
     /// 券面事項入力補助AP
     case cardInfoInputSupportApplication
     /// 住基AP
     case basicResidentRegistrationApplication
+}
+
+public enum IndividualNumberCardExecuteType: CaseIterable {
+    ///　券面事項取得
+    case getCardInfoInput
+    ///　電子署名生成
+    case computeDigitalSignature
+    ///　利用者証明用電子証明書取得
+    case getDigitalCertificateForUserVerification
+    ///　暗証番号残り試行回数取得
+    case lookupRemainingPIN
 }
 
 /// マイナンバーカード
